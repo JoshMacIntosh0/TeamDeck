@@ -1,5 +1,6 @@
-#TeamDeck Team Management Software
-###By Joshua George
+# TeamDeck Team Management Software
+### By Joshua George
+---
 ***Please note AI has been used to guide the programming process (not extensively, only for explaining and implementing JS code that was new, unfamiliar, or confusing to me)!***
 ---
 ##How to Use-
