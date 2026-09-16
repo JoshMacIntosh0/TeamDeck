@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeamDeck Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="title-group">
+        <span class="menu-icon">☰</span>
+        <h1>TEAMDECK MANAGEMENT</h1>
+      </div>
+
+      <div class="topbar-right">
+        <div class="progress">
+          <div class="progress-bar">
+            <div id="overallProgressFill" class="progress-fill"></div>
+          </div>
+          <span id="overallProgressText">0%</span>
+        </div>
+
+        <div class="top-icons">
+          <span>📅</span>
+          <span>✎</span>
+          <span>ⓘ</span>
+          <span class="profile-icon">👤</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-layout">
+      <aside class="info-panel">
+        <h2>INFO</h2>
+
+        <div id="userList"></div>
+
+        <div class="user-actions">
+          <button id="addUserButton" type="button">+ User</button>
+          <button id="editUserButton" type="button">✎ User</button>
+          <button id="deleteUserButton" type="button">× User</button>
+        </div>
+
+        <p id="userMessage"></p>
+
+      </aside>
+
+      <section class="main-panel">
+        <h2>DASHBOARD</h2>
+
+        <div class="task-tools">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search tasks..."
+          >
+
+          <select id="sortSelect">
+            <option value="default">Sort tasks</option>
+            <option value="titleAZ">Title: A-Z</option>
+            <option value="titleZA">Title: Z-A</option>
+            <option value="progressHigh">Progress: high to low</option>
+            <option value="progressLow">Progress: low to high</option>
+          </select>
+        </div>
+
+        <p id="dashboardMessage"></p>
+
+        <div id="taskForm" class="task-form hidden">
+          <h3>Add Task</h3>
+
+          <label for="newTaskTitle">Task title</label>
+          <input
+            id="newTaskTitle"
+            type="text"
+            minlength="3"
+            maxlength="30"
+            required
+          >
+
+          <label for="newTaskDuration">Duration in days</label>
+          <input
+            id="newTaskDuration"
+            type="number"
+            min="1"
+            max="365"
+            required
+          >
+
+          <label for="newTaskInfo">Task information</label>
+          <input
+            id="newTaskInfo"
+            type="text"
+            minlength="3"
+            maxlength="60"
+            required
+          >
+
+          <button id="saveTaskButton" type="button">Save Task</button>
+          <button id="cancelTaskButton" type="button">Cancel</button>
+
+          <p id="formMessage"></p>
+        </div>
+
+        <div class="task-cards" id="taskCards"></div>
+
+        <div class="bottom-actions">
+          <button id="deleteButton" type="button">🗑</button>
+          <button id="addButton" type="button">+</button>
+        </div>
+
+        
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
