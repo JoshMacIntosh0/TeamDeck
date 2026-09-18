@@ -253,6 +253,11 @@ body {
   color: #eeeeee;
 }
 
+.status-select option {
+  background: #303030;
+  color: white;
+}
+
 .arrow {
   color: #f15a2b;
   font-size: 1.6rem;
