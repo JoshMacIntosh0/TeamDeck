@@ -1,3 +1,7 @@
+//Dashboard Script - Joshua George (ACC SAT)
+//================
+
+//Default Tasks
 const startingTasks = [
   {
     id: 1,
@@ -61,6 +65,7 @@ const startingTasks = [
   }
 ];
 
+//Local Storage Function
 function saveTasks(tasks) {
   localStorage.setItem(
     "teamdeckTasks",
@@ -68,6 +73,7 @@ function saveTasks(tasks) {
   );
 }
 
+//Load Tasks from Local Storage (or use defaults)
 function loadTasks() {
   const savedTasks = localStorage.getItem("teamdeckTasks");
 
@@ -79,6 +85,7 @@ function loadTasks() {
   return JSON.parse(savedTasks);
 }
 
+//Validate Task Edit Input
 function validateTask(title, duration, info) {
   const errors = [];
 
@@ -92,7 +99,7 @@ function validateTask(title, duration, info) {
     errors.push("Duration cannot be empty.");
   } else if (isNaN(duration) || Number(duration) <= 0) {
     errors.push("Duration must be a positive number.");
-  }
+  } 
 
   if (info.trim() === "") {
     errors.push("Task information cannot be empty.");
@@ -101,6 +108,7 @@ function validateTask(title, duration, info) {
   return errors;
 }
 
+//Get Next Task ID
 function getNextTaskId() {
   if (tasks.length === 0) {
     return 1;
@@ -113,6 +121,7 @@ function getNextTaskId() {
   return Math.max(...taskIds) + 1;
 }
 
+//Clear Task Form
 function clearTaskForm() {
   newTaskTitle.value = "";
   newTaskDuration.value = "";
@@ -120,6 +129,9 @@ function clearTaskForm() {
   formMessage.textContent = "";
 }
 
+//========================
+//Dashboard Element Constants
+//========================
 const taskCards = document.getElementById("taskCards");
 
 const searchInput = document.getElementById("searchInput");
