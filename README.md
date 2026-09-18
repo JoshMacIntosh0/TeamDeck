@@ -9,3 +9,6 @@
 ---
 >[!IMPORTANT]
 >Refresh your page after adding a requirement to see the changes
+
+>[!IMPORTANT]
+>Data saves locally on the host computer only and is not transferrable across computers as of now
