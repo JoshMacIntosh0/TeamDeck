@@ -454,9 +454,6 @@ addRequirementButton.addEventListener("click", function () {
 });
 
 
-
-
-
 function validateTask(title, duration, info) {
   const errors = [];
 
@@ -470,9 +467,7 @@ function validateTask(title, duration, info) {
     errors.push("Duration cannot be empty.");
   } else if (isNaN(duration) || Number(duration) <= 0) {
     errors.push("Duration must be a positive number.");
-  } else if (duration.trim() > 999) {
-    errors.push("Duration cannot exceed 999 days.");
-  }
+  } 
 
   if (info.trim() === "") {
     errors.push("Task information cannot be empty.");
@@ -495,6 +490,8 @@ editTaskButton.addEventListener("click", function () {
   editTaskForm.classList.remove("hidden");
 });
 
+
+//Save Edited Task Details
 saveEditButton.addEventListener("click", function () {
   const title = editTaskTitle.value.trim();
   const duration = editTaskDuration.value.trim();
