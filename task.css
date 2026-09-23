@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #1f1f1f;
+  color: white;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.topbar {
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  color: #f15a2b;
+  font-size: 2rem;
+}
+
+.title-group h1 {
+  font-size: 2rem;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 110px;
+  height: 20px;
+  background: #5c5c5c;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 39%;
+  height: 100%;
+  background: #f15a2b;
+  border-radius: 20px;
+}
+
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f15a2b;
+  font-size: 1.2rem;
+}
+
+.profile-icon {
+  font-size: 1.8rem;
+}
+
+.page-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 10px;
+  min-height: calc(100vh - 76px);
+}
+
+.info-panel,
+.task-panel {
+  border: 2px solid #f15a2b;
+  border-radius: 6px;
+  background: #252525;
+  padding: 12px;
+}
+
+.info-panel h2,
+.task-heading h2 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.user-card {
+  display: grid;
+  grid-template-columns: 42px 1fr 28px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
+}
+
+.purple {
+  color: #c76df0;
+}
+
+.yellow {
+  color: #f0bf1d;
+}
+
+.red {
+  color: #ff3b30;
+}
+
+.user-text strong,
+.user-text span {
+  display: block;
+}
+
+.user-text span {
+  font-size: 0.85rem;
+}
+
+.ring {
+  width: 28px;
+  height: 28px;
+  border: 5px solid #555;
+  border-radius: 50%;
+  border-top-color: #f15a2b;
+}
+
+.ring-purple {
+  border-top-color: #c76df0;
+}
+
+.ring-yellow {
+  border-top-color: #f0bf1d;
+}
+
+.ring-red {
+  border-top-color: #ff3b30;
+}
+
+.task-panel {
+  background: #303030;
+  position: relative;
+}
+
+.task-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  height: 38px;
+}
+
+.task-heading h2 {
+  margin: 0;
+}
+
+.heading-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.heading-buttons button {
+  border: none;
+  background: transparent;
+  color: #f15a2b;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.task-progress {
+  width: 125px;
+  height: 22px;
+  margin-left: auto;
+  background: #5c5c5c;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.task-progress-fill {
+  width: 28%;
+  height: 100%;
+  background: #f15a2b;
+  border-radius: 20px;
+}
+
+.requirements {
+  min-height: 350px;
+  margin-top: 5px;
+  padding: 12px 14px;
+  background: #202020;
+}
+
+.requirement-row {
+  min-height: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+}
+
+.requirement-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.person {
+  font-size: 1.4rem;
+}
+
+.status-select {
+  width: 125px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  appearance: none;
+}
+
+.status-select.completed {
+  color: #00bd69;
+}
+
+.status-select.in-progress {
+  color: #f15a2b;
+}
+
+.status-select.not-started {
+  color: #eeeeee;
+}
+
+.status-select option {
+  background: #303030;
+  color: white;
+}
+
+.arrow {
+  color: #f15a2b;
+  font-size: 1.6rem;
+}
+
+.milestone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 5px;
+  color: #f15a2b;
+  font-size: 1rem;
+}
+
+.milestone-line {
+  height: 2px;
+  flex: 1;
+  background: #f15a2b;
+}
+
+#taskMessage {
+  color: #f15a2b;
+  margin-top: 12px;
+}
+
+@media (max-width: 800px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    height: auto;
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .requirement-row {
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+  }
+}
+
+.edit-task-form {
+  width: 320px;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #f15a2b;
+  border-radius: 6px;
+  background: #202020;
+}
+
+.edit-task-form h3 {
+  color: #f15a2b;
+  margin-bottom: 12px;
+}
+
+.edit-task-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.edit-task-form input {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #f15a2b;
+  border-radius: 5px;
+  background: #303030;
+  color: white;
+}
+
+.edit-task-form button {
+  margin-top: 15px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #f15a2b;
+  color: white;
+  cursor: pointer;
+}
+
+#cancelEditButton {
+  background: #555;
+}
+
+#editFormMessage {
+  margin-top: 10px;
+  color: #ff3b30;
+}
+
+.hidden {
+  display: none;
+}
+
+.requirement-name {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.assigned-users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.assigned-user-select {
+  max-width: 120px;
+  border: 1px solid #f15a2b;
+  border-radius: 4px;
+  padding: 5px;
+  background: #252525;
+  color: white;
+}
+
+.assigned-user-tag {
+  padding: 3px 6px;
+  border: 1px solid;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+
+.ring {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ring-centre {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #252525;
+}
+
+.delete-requirement-button {
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #ff3b30;
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.delete-requirement-button:hover {
+  background: #ff3b30;
+  color: white;
+}
+
+.requirement-name,
+.requirement-name span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+}

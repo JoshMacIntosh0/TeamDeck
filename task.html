@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeamDeck Task</title>
+  <link rel="stylesheet" href="task.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="title-group">
+        <span class="menu-icon">☰</span>
+        <h1>TEAMDECK MANAGEMENT</h1>
+      </div>
+
+      <div class="topbar-right">
+        <div class="progress">
+          <div class="progress-bar">
+            <div id="overallProgressFill" class="progress-fill"></div>
+          </div>
+          <span id="overallProgressText">0%</span>
+        </div>
+
+        <div class="top-icons">
+          <span>📅</span>
+          <span>✎</span>
+          <span>ⓘ</span>
+          <span class="profile-icon">👤</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-layout">
+      <aside class="info-panel">
+        <h2>INFO</h2>
+
+        <div id="userList"></div>
+      </aside>
+
+      <section class="task-panel">
+        <div class="task-heading">
+          <h2 id="taskTitle">TASK 1</h2>
+
+          <div class="heading-buttons">
+            <button id="editTaskButton">✎</button>
+            <button id="addRequirementButton">+</button>
+          </div>
+
+          <div class="task-progress">
+            <div id="taskProgressFill" class="task-progress-fill"></div>
+          </div>
+        </div>
+
+        <div id="requirements" class="requirements">
+          
+        </div>
+
+        <div id="editTaskForm" class="edit-task-form hidden">
+          <h3>Edit Task</h3>
+
+          <label for="editTaskTitle">Task title</label>
+          <input
+            id="editTaskTitle"
+            type="text"
+            minlength="3"
+            maxlength="30"
+          >
+
+          <label for="editTaskDuration">Duration in days</label>
+          <input
+            id="editTaskDuration"
+            type="number"
+            min="1"
+            max="365"
+            step="1"
+            required
+          >
+
+          <label for="editTaskInfo">Task information</label>
+          <input
+            id="editTaskInfo"
+            type="text"
+            minlength="3"
+            maxlength="60"
+          >
+
+          <button id="saveEditButton" type="button">Save Changes</button>
+          <button id="cancelEditButton" type="button">Cancel</button>
+
+          <p id="editFormMessage"></p>
+        </div>
+
+        <p id="taskMessage"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="task.js"></script>
+</body>
+</html>
