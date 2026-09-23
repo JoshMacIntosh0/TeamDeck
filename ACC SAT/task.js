@@ -442,15 +442,14 @@ addRequirementButton.addEventListener("click", function () {
     JSON.stringify(tasks)
   );
 
+  window.location.reload();
+
   renderTaskPage();
   renderUsers();
 
   taskMessage.textContent =
     "New requirement added.";
 
-  setTimeout(function () {
-    window.location.reload();
-  }, 300);
 });
 
 
