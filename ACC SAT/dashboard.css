@@ -514,3 +514,13 @@ body {
   border-radius: 5px;
   padding-left: 5px;
 }
+
+.task-info h3,
+.task-info p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.task-info {
+  min-width: 0;
+}

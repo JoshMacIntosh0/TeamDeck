@@ -464,8 +464,14 @@ function validateTask(title, duration, info) {
 
   if (duration.trim() === "") {
     errors.push("Duration cannot be empty.");
-  } else if (isNaN(duration) || Number(duration) <= 0) {
-    errors.push("Duration must be a positive number.");
+  } else if (isNaN(duration)) {
+    errors.push("Duration must be a number.");
+  } else if (Number(duration) < 1 || Number(duration) > 365) {
+    errors.push(
+      "Duration must be between 1 and 365 days."
+    );
+  } else if (!Number.isInteger(Number(duration))) {
+    errors.push("Duration must be a whole number of days.");
   } 
 
   if (info.trim() === "") {
