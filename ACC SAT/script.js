@@ -10,7 +10,7 @@ loginBtn.addEventListener("click", function () {
   const password = document.getElementById("password").value;
 
   if (username === "" || password === "") {
-    message.textContent = "Please enter both username and password.";
+    message.textContent = "Please enter ANY username and password.";
     message.style.color = "red";
   } else {
     window.location.href = "dashboard.html";
